@@ -29,10 +29,10 @@ export default {
     stopResponding: '停止响应',
   },
   chat: {
-    newChatButton: '新建聊天',
+    newChatButton: '新建对话',
     //placeholder: '来说点什么吧...（Shift + Enter = 换行，"/" 触发提示词）',
-    placeholder: '可输入说点什么，也可贴截图或拖拽文件（Shift + Enter = 换行，"/" 触发提示词）',
-    placeholderMobile: '来说点什么...',
+    placeholder: '欢迎来到RJLAPI，可贴截图或拖拽文件（Shift + Enter = 换行，"/" 触发提示词）',
+    placeholderMobile: '欢迎来到RJLAPI',
     copy: '复制',
     copied: '复制成功',
     copyCode: '复制代码',
@@ -60,7 +60,7 @@ export default {
     avatarLink: '头像链接',
     name: '名称',
     description: '描述',
-    role: '角色设定',
+    role: '角色设定（不是必须的）',
     temperature: 'Temperature',
     top_p: 'Top_p',
     resetUserInfo: '重置用户信息',
@@ -76,7 +76,7 @@ export default {
     monthlyUsage: '本月使用量',
   },
   store: {
-    siderButton: '提示词商店',
+    siderButton: '新建对话可减少扣费',
     local: '本地',
     online: '在线',
     title: '标题',
@@ -95,14 +95,14 @@ export default {
   },
 
 
-  mjset:{
-    server:'服务端'
-    ,about:'关于'
-    ,model:'模型'
-    ,sysname:'AI绘图'
-  }
+   mjset: {
+    server: '服务端',
+    about: '余额',
+    model: '模型',
+    sysname: 'RJLAPI',
+  },
 
-  ,mjtab:{
+  mjtab:{
     chat:'对话'
     ,draw:'绘画'
     ,drawinfo:'AI绘画 Midjourney引擎'
@@ -227,7 +227,7 @@ export default {
     ,uploading:'上传中...'
     ,uploadSuccess:'上传成功'
     ,uploadFail:'上传失败:'
-    ,upPdf:'<span>上传图片、附件<br/>能上传图片、PDF、EXCEL等文档</span><p>支持拖拽</p>'
+    ,upPdf: '<span>上传图片、附件<br/>能上传图片、PDF、EXCEL等文档</span><p>支持拖拽,注意不是所有模型都能识图.</p>'
     ,upImg:'<span><b>上传图片</b><br/>会自动调用 gpt-4-vision-preview 模型<br>注意：会有额外的图片费用<br/>格式: jpeg jpg png gif</span><p>支持拖拽</p> <p class="pt-2"><b>上传MP3 MP4</b> <br>会自动直接调用 whisper-1 模型<br>格式有：mp3 mp4 mpeg mpga m4a wav webm</p>'
     ,clearAll:'清参数'
     ,czoom:'自定义'
@@ -265,9 +265,9 @@ export default {
     ,mCanel:'取消'
     ,mSent:'发送'
 
-    ,findVersion:'发现更新版本'
-    ,yesLastVersion:'已是最新版本'
-    ,infoStar:'此项目开源于 <a  class="text-blue-600 dark:text-blue-500" href="https://github.com/Dooy/chatgpt-web-midjourney-proxy" target="_blank"> GitHub </a>，免费且基于 MIT 协议，没有任何形式的付费行为！ </p><p>如果你觉得此项目对你有帮助，请在 GitHub 帮我点个 Star，谢谢！'
+    ,findVersion: 'RJLAPI',
+    yesLastVersion: 'RJLAPI',
+    infoStar: ' <a  class="text-blue-600 dark:text-blue-500" href="https://api.raojialong.space" target="_blank"> RJLAPI </a>，便宜且稳定的chatgpt的api服务 </p><p>已经稳定运行1年多'
     ,setBtSaveChat:'仅保存会话'
     ,setBtSaveSys: '保存至系统'
 
