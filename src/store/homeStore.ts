@@ -65,9 +65,9 @@ const  getDefault=()=>{
 const amodel = homeStore.myData.session.amodel??'gpt-3.5-turbo'
 let v:gptConfigType={
         model: amodel,
-        max_tokens:1024,
+        max_tokens:4096,
         userModel:'',
-        talkCount:10,
+        talkCount:20,
         systemMessage:'',
         temperature:0.5,
         top_p:1,
