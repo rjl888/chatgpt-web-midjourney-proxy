@@ -122,6 +122,32 @@ router.post('/session', async (req, res) => {
 router.post('/verify', verify)
 router.get('/reg', regCookie )
 
+//增加获取应用命令
+router.get('/prompts', async (req, res) => {
+  const dirPath = path.join(__dirname, 'prompt');
+  try {
+    const folders = fs.readdirSync(dirPath).filter(file => fs.statSync(path.join(dirPath, file)).isDirectory());
+    const data = {};
+
+    folders.forEach(folder => {
+      const folderPath = path.join(dirPath, folder);
+      const files = fs.readdirSync(folderPath).filter(file => file.endsWith('.json'));
+      data[folder] = files.map(file => {
+        const filePath = path.join(folderPath, file);
+        const content = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
+        return {
+          title: content.meta.title,
+          systemRole: content.config.systemRole
+        };
+      });
+    });
+
+    res.json({ status: 'Success', data });
+  } catch (error) {
+    res.status(500).json({ status: 'Fail', message: error.message });
+  }
+});
+
  const API_BASE_URL = isNotEmptyString(process.env.OPENAI_API_BASE_URL)
     ? process.env.OPENAI_API_BASE_URL
     : 'https://api.openai.com'
