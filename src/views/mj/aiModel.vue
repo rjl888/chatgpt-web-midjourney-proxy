@@ -73,7 +73,7 @@ const handleSelectChange = (folder: string) => {
 };
 
 const config = ref({
-  model: ['gpt-3.5-turbo-1106'],
+  model: [],
   maxToken: 64000
 });
 const st = ref({ openMore: false });
