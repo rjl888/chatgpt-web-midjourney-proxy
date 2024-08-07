@@ -9,7 +9,6 @@ import lumaLayout from '@/views/luma/layout.vue'
 
 const routes: RouteRecordRaw[] = [
   {
-		
     path: '/bingAI',
     name: 'bingAI',
     component: () => import('@/views/mj/bingAI.vue'),
@@ -24,7 +23,7 @@ const routes: RouteRecordRaw[] = [
     name: 'prompt',
     component: () => import('@/views/mj/prompt.vue'),
   },
-
+  {
     path: '/',
     name: 'Root',
     component: ChatLayout,
@@ -37,7 +36,7 @@ const routes: RouteRecordRaw[] = [
       },
     ],
   },
-   {
+  {
     path: '/g',
     name: 'g',
     component: ChatLayout,
@@ -50,7 +49,7 @@ const routes: RouteRecordRaw[] = [
       },
     ],
   },
-   {
+  {
     path: '/m',
     name: 'm',
     component: ChatLayout,
@@ -63,12 +62,7 @@ const routes: RouteRecordRaw[] = [
       },
     ],
   },
-
-	{
-    path: '/bingAI',
-    name: 'bingAI',
-    component: () => import('@/views/mj/bingAI.vue'),
-  },
+  
   {
     path: '/s',
     name: 's',
@@ -82,8 +76,6 @@ const routes: RouteRecordRaw[] = [
       },
     ],
   },
-
-
   {
     path: '/draw',
     name: 'Rootdraw',
@@ -97,8 +89,7 @@ const routes: RouteRecordRaw[] = [
       },
     ],
   },
-
-    {
+  {
     path: '/music',
     name: 'music',
     component: sunoLayout,
@@ -110,9 +101,6 @@ const routes: RouteRecordRaw[] = [
         component: () => import('@/views/suno/music.vue'),
       },
     ],
-
-    
-
   },
   {
     path: '/video',
@@ -127,7 +115,6 @@ const routes: RouteRecordRaw[] = [
       },
     ],
   },
-
   {
     path: '/dance',
     name: 'dance',
@@ -141,26 +128,22 @@ const routes: RouteRecordRaw[] = [
       },
     ],
   },
-
-  //调试
+  // 调试
   // {
   //   path: '/mytest',
   //   name: 'mytest',
   //   component: () => import('@/views/mj/myTest.vue'),
   // },
-
   {
     path: '/404',
     name: '404',
     component: () => import('@/views/exception/404/index.vue'),
   },
-
   {
     path: '/500',
     name: '500',
     component: () => import('@/views/exception/500/index.vue'),
   },
-
   {
     path: '/:pathMatch(.*)*',
     name: 'notFound',
