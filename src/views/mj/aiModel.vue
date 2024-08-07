@@ -73,8 +73,8 @@ const handleSelectChange = (folder: string) => {
 };
 
 const config = ref({
- model: ['gpt-3.5-turbo-1106'],
-  maxToken: 8192
+  model: ['gpt-3.5-turbo-1106'],
+  maxToken: 64000
 });
 const st = ref({ openMore: false });
 const voiceList = computed(() => {
@@ -136,7 +136,7 @@ const handleModelChange = (n) => {
   let max = 64000; // 默认最大令牌数
 
   config.value.maxToken = max; // 设置最大令牌数为默认最大值
-  nGptStore.value.max_tokens = max; // 更新 max_tokens 为默认最大值
+  nGptStore.value.max_tokens = Math.min(max, nGptStore.value.max_tokens); // 更新 max_tokens 为默认最大值，但不小于当前值
 };
 
 // 注册watch
@@ -149,7 +149,7 @@ const reSet = () => {
   // 手动设置 nGptStore 的默认值，但不包括模型
   nGptStore.value = {
     ...nGptStore.value, // 保留模型的值
-    max_tokens: 4096,
+    max_tokens: 4096, // 添加 max_tokens 的默认值
     userModel: '',
     talkCount: 20,
     systemMessage: '',
