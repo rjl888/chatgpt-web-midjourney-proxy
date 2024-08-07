@@ -9,6 +9,22 @@ import lumaLayout from '@/views/luma/layout.vue'
 
 const routes: RouteRecordRaw[] = [
   {
+		{
+    path: '/bingAI',
+    name: 'bingAI',
+    component: () => import('@/views/mj/bingAI.vue'),
+  },
+  {
+    path: '/imgPrompt',
+    name: 'imgPrompt',
+    component: () => import('@/views/mj/imgPrompt.vue'),
+  },
+  {
+    path: '/prompt',
+    name: 'prompt',
+    component: () => import('@/views/mj/prompt.vue'),
+  },
+
     path: '/',
     name: 'Root',
     component: ChatLayout,
