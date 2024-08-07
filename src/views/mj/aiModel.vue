@@ -83,22 +83,15 @@ const saveChat=(type:string)=>{
      emit('close');
 }
  
-watch(()=>nGptStore.value.model,(n)=>{
-    nGptStore.value.gpts=undefined;
-    let max=4096*2*2;
-    if( n.indexOf('vision')>-1){
-        max=4096*2;
-    }else if( n=='gpt-4o-2024-08-06' ){  
-        max=16384 *2;
-    }else if( n.indexOf('gpt-4')>-1 ||  n.indexOf('16k')>-1 ){ //['16k','8k','32k','gpt-4'].indexOf(n)>-1
-        max=4096*2;
-    }else if( n.toLowerCase().includes('claude-3') ){
-         max=4096*2;
-    }
-    config.value.maxToken=max/2;
-    if(nGptStore.value.max_tokens> config.value.maxToken ) nGptStore.value.max_tokens= config.value.maxToken;
-})
+watch(() => nGptStore.value.model, (n) => {
+    nGptStore.value.gpts = undefined;
+    let max = 64000 * 2; // 设置所有模型的最大值
 
+    config.value.maxToken = max / 2;
+    if (nGptStore.value.max_tokens > config.value.maxToken) {
+        nGptStore.value.max_tokens = config.value.maxToken;
+    }
+});
 const reSet=()=>{
     gptConfigStore.setInit();
     nGptStore.value= gptConfigStore.myData;
