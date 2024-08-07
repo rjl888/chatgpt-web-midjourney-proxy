@@ -79,6 +79,22 @@ const chatId= computed(()=>chatStore.active??'1002' );
                 </n-tooltip>
             </a>
 
+<a :href="`https://api.raojialong.space/topup`" class="flex items-center justify-center flex-col">
+      <SvgIcon icon="whh:spiderman" class="text-3xl"></SvgIcon>
+      <div class="text-[13px]">控制台</div>
+    </a>
+					<a :href="`#/bingAI`"
+          class=" router-link-exact-active h-12 w-12 cursor-pointer rounded-xl bg-white duration-300 dark:bg-[#34373c] hover:bg-[#bbb] dark:hover:bg-[#555]">
+          <n-tooltip placement="right" trigger="hover">
+            <template #trigger>
+              <div class="flex h-full justify-center items-center   py-1 flex-col">
+                <SvgIcon icon="ri:wechat-line" class="text-3xl flex-1"></SvgIcon>
+                <span class="text-[10px]">BingAI</span>
+              </div>
+            </template>
+            BingAI
+          </n-tooltip>
+        </a>
 
 
              <a  v-if="!isDisableMenu ( 'gallery')"  @click="homeStore.setMyData({act:'gallery'}) " class=" router-link-exact-active h-12 w-12 cursor-pointer rounded-xl bg-white duration-300 dark:bg-[#34373c] hover:bg-[#bbb] dark:hover:bg-[#555]">
